@@ -1,11 +1,11 @@
-drop table agency;
-drop table calendar;
-drop table calendar_dates;
-drop table routes;
-drop table shapes;
-drop table stop_times;
-drop table stops;
-drop table trips;
+drop table if exists agency;
+drop table if exists calendar;
+drop table if exists calendar_dates;
+drop table if exists routes;
+drop table if exists shapes;
+drop table if exists stop_times;
+drop table if exists stops;
+drop table if exists trips;
 
 create table agency (
   agency_id varchar,
@@ -15,9 +15,9 @@ create table agency (
   agency_lang varchar,
   agency_phone varchar,
   agency_fare_url varchar);
-  
+
   \copy agency from '~/agency.txt' DELIMITER ',' CSV HEADER;
-  
+
 create table calendar (
   service_id numeric,
   monday numeric,
@@ -29,15 +29,15 @@ create table calendar (
   sunday numeric,
   start_date varchar,
   end_date varchar);
-  
+
   \copy calendar from '~/calendar.txt' DELIMITER ',' CSV HEADER;
-  
+
 create table calendar_dates (
   service_id numeric,
   date date,
   exception_type numeric);
   \copy calendar_dates from '~/calendar_dates.txt' DELIMITER ',' CSV HEADER;
-  
+
 create table routes (
   route_id numeric,
   agency_id varchar,
@@ -48,8 +48,8 @@ create table routes (
   route_url varchar,
   route_color varchar,
   route_text_color varchar);
-  
-  
+
+
 \copy routes from '~/routes.txt' DELIMITER ',' CSV HEADER;
 
 create table shapes (
@@ -58,8 +58,8 @@ create table shapes (
   shape_pt_lon double precision,
   shape_pt_sequence numeric,
   shape_dist_traveled double precision);
-  
-  
+
+
 \copy shapes from '~/shapes.txt' DELIMITER ',' CSV HEADER;
 
 create table stop_times (
@@ -72,7 +72,7 @@ create table stop_times (
   pickup_type numeric,
   drop_off_type numeric,
   shape_dist_traveled double precision);
-  
+
 \copy stop_times from '~/stop_times.txt' DELIMITER ',' CSV HEADER;
 
 
@@ -88,9 +88,9 @@ create TABLE stops (
   parent_station varchar,
   stop_timezone varchar,
   wheelchair_boarding numeric);
-  
-\copy stops from '~/stops.txt' DELIMITER ',' CSV HEADER;  
-  
+
+\copy stops from '~/stops.txt' DELIMITER ',' CSV HEADER;
+
 CREATE TABLE trips (
   route_id numeric,
   service_id numeric,
@@ -102,8 +102,5 @@ CREATE TABLE trips (
   shape_id numeric,
   wheelchair_accessible numeric,
   bikes_allowed numeric);
-  
-\copy trips from '~/trips.txt' DELIMITER ',' CSV HEADER;  
 
-
-  
+\copy trips from '~/trips.txt' DELIMITER ',' CSV HEADER;
