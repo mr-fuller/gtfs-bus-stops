@@ -5,6 +5,14 @@ Queries for creating a line geometry layer of fixed bus routes and a point geome
 ## Download GTFS Files
 TARTA's files are available here: http://tarta.com/wp-content/uploads/gtfs/GTFS.zip
 
+If you're feeling bougie, you could use wget or curl to download automatically:
+
+`wget http://tarta.com/wp-content/uploads/gtfs/GTFS.zip`
+
+or
+
+`curl http://tarta.com/wp-content/uploads/gtfs/GTFS.zip > tarta_gtfs_$(date -d today +%F).zip`
+
 ## Create Postgis Database
 
 ## Run Batch Query
