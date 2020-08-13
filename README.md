@@ -11,7 +11,7 @@ If you're feeling bougie, you could use wget or curl to download automatically:
 
 or
 
-`curl http://tarta.com/wp-content/uploads/gtfs/GTFS.zip > tarta_gtfs_$(date -d today +%F).zip && unzip tarta_gtfs_$(date -d today +%F) -d ./tarta_gtfs_$(date -d today +%F)`
+`curl http://tarta.com/wp-content/uploads/gtfs/GTFS.zip > tarta_gtfs_$(date -d today +%F).zip && unzip tarta_gtfs_$(date -d today +%F).zip -d ./tarta_gtfs_$(date -d today +%F)`
 
 ## Create Postgis Database
 
