@@ -1,7 +1,7 @@
 drop table tarta_routes;
 create table tarta_routes as (
 SELECT shapes.shape_id,
-ST_MakeLine(ST_MakePoint(shape_pt_lon,shape_pt_lat) order by shape_pt_sequence) as geom,
+ST_MakeLine(ST_SetSRID(ST_Point(shape_pt_lon,shape_pt_lat),4326) order by shape_pt_sequence) as geom,
 	--trips.shape_id,
 	trips.route_id,
 	trips.trip_headsign,
