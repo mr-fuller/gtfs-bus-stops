@@ -1,0 +1,13 @@
+*.zip
+*.dbf
+*.prj
+*.shp
+*.shx
+agency.txt
+calendar.txt
+google.log
+routes.txt
+shapes.txt
+stops.txt
+stop_times.txt
+trips.txt
