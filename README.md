@@ -5,13 +5,11 @@ Queries for creating a line geometry layer of fixed bus routes and a point geome
 ## Download GTFS Files
 TARTA's files are available here: http://tarta.com/wp-content/uploads/gtfs/GTFS.zip
 
-If you're feeling bougie, you could use wget or curl to download automatically:
+In the gtfs2shp.sh script, set the DIR to wherever you want the files downloaded.
 
-`wget http://tarta.com/wp-content/uploads/gtfs/GTFS.zip`
+Also, update database parameters.
 
-or
-
-`curl http://tarta.com/wp-content/uploads/gtfs/GTFS.zip > tarta_gtfs_$(date -d today +%F).zip && unzip tarta_gtfs_$(date -d today +%F).zip -d ./tarta_gtfs_$(date -d today +%F)`
+Then, use the gtfs2shp.sh script to download the GTFS archive, unzip it, put it into postgres, then create shapefiles of routes and stops in their own zip folders.
 
 ## Create Postgis Database
 
