@@ -1,3 +1,5 @@
+credentials.json
+
 *.zip
 *.dbf
 *.prj
@@ -11,4 +13,5 @@ shapes.txt
 stops.txt
 stop_times.txt
 trips.txt
-credentials.json
+
+
