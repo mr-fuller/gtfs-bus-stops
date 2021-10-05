@@ -14,5 +14,6 @@ stops.txt
 stop_times.txt
 trips.txt
 *.geojson
+*.log
 
 
