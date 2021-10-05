@@ -34,5 +34,5 @@ ogr2ogr -f "GeoJSON" $DIR/tarta_stops.geojson PG:"host=localhost user=$PGUSER db
 zip $DIR/tarta_routes.zip $DIR/tarta_routes.*
 zip $DIR/tarta_stops.zip $DIR/tarta_stops.*
 
-python main.py
+/home/fullerm/anaconda3/envs/gtfs-bus-stops/bin/python ./main.py
 
