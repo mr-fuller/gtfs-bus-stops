@@ -24,11 +24,20 @@ sudo -u postgres psql -d $DBNAME -f $DIR/all_queries.sql
 
 # exit after queries run?
 #exit
+echo "Deleting old geojson..."
+# delete existing geojson if exists(seeing an overwrite error from ogr)
+rm -f -- $DIR/tarta_routes.geojson
 
+rm -f -- $DIR/tarta_stops.geojson
+echo "done"
+
+echo "Writing new geojson..."
 # use gdal to export the routes and stops to shapefiles
 ogr2ogr -f "GeoJSON" $DIR/tarta_routes.geojson PG:"host=localhost user=$PGUSER dbname=$DBNAME password=$PGPW" "tarta_routes"
 
 ogr2ogr -f "GeoJSON" $DIR/tarta_stops.geojson PG:"host=localhost user=$PGUSER dbname=$DBNAME password=$PGPW" "tarta_stops"
+
+echo "done"
 
 # zip the shapefiles?
 zip $DIR/tarta_routes.zip $DIR/tarta_routes.*
